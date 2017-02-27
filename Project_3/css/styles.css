@@ -8,10 +8,8 @@ Date: 2/9/2017
 1. UNIVERSAL STYLES (TYPOGRAPHY, ETC)
 2. HEADER $ NAV STYLES
 3. MAIN BODY CONTENT
-4. SIDEBAR CONTENT
-5. WIDGET CONTENT
-6. FOOTER CONTENT
-7. COMMENTS & FORMS
+4. FOOTER CONTENT
+5. COMMENTS & FORMS
 ********************************************
 ----------------COLOR GUIDE-----------------
 
@@ -53,11 +51,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Candal', sans-serif;
 	color: rgb(245,245,245);
 	text-shadow: 4px 4px rgb(0,0,0), -1px 2px rgb(0,0,0), 2px -1px rgb(0,0,0);
-	}
 }
-p, blockquote, ul, ol, li {
+p, blockquote, ul, ol, li, form {
 	font-family: 'Roboto', sans-serif;
-	color: rgb(100,100,100);
+	color: #000;
 }
 h1 {
 	font-size: 3.5em;
@@ -98,14 +95,12 @@ header ul{
 	padding: 5px 20px 0 0;
 	margin-bottom: 5px;
 	font-family: 'Candal', sans-serif;
-}
-.header a {
-	text-decoration: none;
+	color: rgb(235,35,35);
 }
 .header a:hover {
 	color: rgb(235,35,35);
 }
-header ul, header li {
+header li {
 	display: inline-block;
 	font-size: 1.115em;
 	height: 5px;
@@ -120,6 +115,9 @@ header li a{
 	border-bottom: 5px solid rgb(30,30,30);
 	height: 53px;
 }
+.albums {
+	margin-bottom: 53px;
+}
 
 
 /*******************************************
@@ -133,7 +131,7 @@ header li a{
 	width: 100%;
 	height: 100%;
 }
-#about, #albums {
+#about, #albums, #tp-form {
 	height: 58px;
 }
 .albums a {
@@ -157,7 +155,7 @@ header li a{
 	color: #fff;
 	text-decoration: none;
 }
-.lightbox h1, .lightbox ol, .lightbox li {
+.lightbox h1, .lightbox ol, .lightbox li, .lightbox p {
 	color: #fff;
 	text-shadow: 
 }
@@ -168,12 +166,19 @@ header li a{
 	text-decoration: underline;
 	color: rgb(175,175,175);
 }
-.lightbox ol, .lightbox li {
+.lightbox li {
+	font-size: 2em;
+}
+.lightbox p, .lightbox li {
+	text-align: left;
+}
+.lightbox p, {
 	font-size: 1.5em;
 }
 .lightbox h1 {
 	margin-top: 5%;
 	font-size: 4em;
+	text-shadow: none;
 }
 .lightbox img {
 	height: 80%;
@@ -192,33 +197,16 @@ header li a{
 
 /*******************************************
 ********************************************
-4. SIDEBAR CONTENT
-********************************************
-*******************************************/
-
-
-
-
-
-/*******************************************
-********************************************
-5. WIDGET CONTENT
-********************************************
-*******************************************/
-
-
-
-
-
-/*******************************************
-********************************************
-6. FOOTER CONTENT
+4. FOOTER CONTENT
 ********************************************
 *******************************************/
 
 
 footer {
 	background-color: rgba(20,20,20,.8);
+	color: rgb(235,35,35);
+}
+footer p {
 	color: rgb(235,35,35);
 }
 footer p, footer ul {
@@ -229,11 +217,11 @@ footer ul, footer p {
 	text-align: left;
 }
 footer p:nth-child(odd) {
-	margin: 30px 0 0 350px;
+	margin: 30px 0 0 50px;
 	font-size: 1.215em;
 }
 footer p:nth-child(even) {
-	margin-left: 350px;
+	margin-left: 50px;
 	font-size: 1.35em;
 }
 footer ul {
@@ -247,10 +235,69 @@ footer a {
 
 /*******************************************
 ********************************************
-7. COMMENTS & FORMS
+5. COMMENTS & FORMS
 ********************************************
 *******************************************/
 
 
+form {
+	border-right: 1px dotted #000;
+	border-left: 1px dotted #000;
+	padding: 10px;
+}
+p.form {
+	text-align: right;
+}
+.congrats {
+	display: none;
+}
+.congrats:target {
+	outline: none;
+	display: block;
+}
+.hide {
+	float: right;
+	margin-left: 10px;
+	text-decoration: underline;
+	color: rgb(175,175,175);
+}
+#hidden h1 {
+	text-align: center;
+}
 
 
+/*******************************************
+********************************************
+6. Media Queries
+********************************************
+*******************************************/
+
+
+@media (max-width: 1080px) {
+	.sechs.columns {
+		width: 100%;
+		margin-left: 0;
+		float: none;
+	}
+	header {
+		height: 68px;
+	}
+	.header {
+		font-size: 2.5em;
+	}
+	header li {
+		font-size: 1.5em;
+	}
+	.tp-bar {
+		height: 63px;
+	}
+	#about, #albums, #tp-form {
+	height: 68px;
+	}
+	.lightbox img {
+		height: 55%;
+	}
+	.lightbox p {
+		font-size: 1.6em;
+	}
+}
